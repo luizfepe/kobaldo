@@ -1,2 +1,0 @@
-# kobaldo
-Kobzord > Riobaldo
