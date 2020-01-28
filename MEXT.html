@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <title>01.MEXT PEOPLE</title>
+   <style>
+       #map {
+           height: 100%;
+           width: 100%;
+       }
+       html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+       }
+</style>
+
+
+</head>
+<body>
+<div id="map"></div>
+<script>
+ function initMap() {
+   var kiso = {lat: 35.789444, lng: 137.804444};
+
+    var locations = [
+     ['Renan', 35.7321, 139.4127, 'green', 38, -3],
+     ['Luiz', 35.660278, 139.794444, 'red', -10, 20],
+     ['Maria', 34.8361, 135.4001, 'brown', 23, -3],
+     ['Mariana', 35.6490, 139.7429, 'yellow', 23, -3],
+     ['Álvaro',  ﻿35.67333, 139.51972, 'red', 23, -3],
+     ['Lucas', 35.6051, 139.6835, 'turquoise', 37, -3],
+     ['Clara', 35.1539, 136.9682, 'yellow', -10, 20]
+    ];
+
+   var map = new google.maps.Map(document.getElementById('map'), {
+     zoom: 8,
+     center: kiso
+   });
+
+    //var image = 'https://goo.gl/dqvvFA';
+    for (var i = 0; i < locations.length; i++) {
+     var item = locations[i];
+     var marker = new google.maps.Marker({
+        position: {lat: item[1], lng: item[2]},
+        label: item[0],
+        title: item[0],
+        labelAnchor: new google.maps.Point(15, 65),
+        labelClass: "labels", // the CSS class for the label
+        labelInBackground: true,
+       map: map,
+       //icon: image,
+       title: item[0]
+     });
+    }
+
+
+
+ }
+ </script>
+
+     <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBC4_3rDIkyX5yHoBc547nGBXbEN2esFTQ&callback=initMap">
+    </script>
+</body>
+</html>
