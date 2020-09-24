@@ -21,7 +21,7 @@
 <div id="map"></div>
 <script>
  function initMap() {
-   var kiso = {lat: 35.789444, lng: 137.804444};
+   var centerpoint = {lat: 38, lng: 140};
 
     var locations = [
      ['EFREM', 37.8693, 138.9547, 'green', 38, -3, 'NIIGATA'],
@@ -52,7 +52,7 @@
 
    var map = new google.maps.Map(document.getElementById('map'), {
      zoom: 6,
-     center: kiso
+     center: centerpoint
    });
 
     //var image = 'https://goo.gl/dqvvFA';
